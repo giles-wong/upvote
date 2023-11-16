@@ -1,0 +1,20 @@
+{
+  "mode": "debug",
+  "port": 8180,
+  "logger": {
+    "level": "debug",
+    "filename": "app.log",
+    "maxsize": 200,
+    "maxAge": 7,
+    "maxBackups": 10,
+    "compress": false
+  },
+  "mysql": {
+    "user": "timeline",
+    "pass": "NzDhkJz52cKWrE2j",
+    "host": "101.42.17.116",
+    "port": "3306",
+    "dbName": "timeline",
+    "charset": "utf8mb4"
+  }
+}
