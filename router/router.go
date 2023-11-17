@@ -2,7 +2,7 @@ package router
 
 import (
 	"giles.wang/upvote/config"
-	"giles.wang/upvote/controllers"
+	userControllers "giles.wang/upvote/controllers/user"
 	"giles.wang/upvote/pkg/logger"
 	"github.com/gin-gonic/gin"
 )
@@ -15,9 +15,7 @@ func Router() *gin.Engine {
 	//用户组
 	user := r.Group("/user")
 	{
-		user.GET("/list", controllers.UserController{}.GetUserList)
-		user.POST("/info", controllers.UserController{}.GetUserInfo)
-		user.POST("/add", controllers.UserController{}.AddUser)
+		user.POST("/register", userControllers.UserController{}.Register)
 	}
 
 	return r

@@ -49,7 +49,7 @@ func InitLogger(cfg *config.LogConfig) {
 
 	teeCore := zapcore.NewTee(
 		zapcore.NewCore(encoder, getLogWriter(logFile), level(cfg.Level)),
-		zapcore.NewCore(encoder, getLogWriter(errFile), zapcore.DebugLevel),
+		zapcore.NewCore(encoder, getLogWriter(errFile), zapcore.ErrorLevel),
 	)
 
 	logger = zap.New(teeCore, zap.AddCaller())

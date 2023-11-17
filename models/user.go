@@ -14,18 +14,17 @@ type User struct {
 }
 
 func (User) TableName() string {
-	return "gin_test_user"
+	return "upvote_user"
 }
 
-func GetUserInfo(id int64) (User, error) {
-	var user User
-
-	err := dao.Db.Where("id = ?", id).First(&user).Error
-	return user, err
-}
+//func GetUserInfo(id int64) (User, error) {
+//	var user User
+//
+//	err := dao.Db.Where("id = ?", id).First(&user).Error
+//	return user, err
+//}
 
 func AddUser(user *User) int64 {
-
 	err := dao.Db.Create(user)
 	if err != nil {
 		return user.Id
